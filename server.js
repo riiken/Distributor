@@ -76,14 +76,14 @@ app.use('/api/payment',payment);
 app.use('/api/feedback',feedback);
 
 
-app.use(express.static(__dirname +"/dist"));
+app.use(express.static(__dirname +"/dist/superstore-ui"));
 app.get('/',(req,res)=>{
-  res.sendFile(path.join(__dirname+'/dist/index.html'));
+  res.sendFile(path.join(__dirname+'/dist/superstore-ui/index.html'));
 });
 
 
 // application server here
-app.listen(process.env.port || 3000,()=>{
+app.listen(process.env.port || 8080,()=>{
     console.log('server running at 3000 port')
 })
 
